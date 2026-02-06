@@ -88,7 +88,6 @@ export function Preview({ content, searchQuery: _searchQuery = "", fileName = "d
         onClose={() => setIsExportDialogOpen(false)}
         content={content}
         title={fileName.replace(/\.md$/, "")}
-        apiBaseUrl={import.meta.env.VITE_API_URL || "http://localhost:8001"}
       />
     </div>
   );
