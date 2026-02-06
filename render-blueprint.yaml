@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: markdown-viewer-backend
+    env: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12
+      - key: PORT
+        value: 8001
+      - key: CORS_ORIGINS
+        value: https://markdown-viewer-two-plum.vercel.app,https://markdown-viewer.vercel.app
+    healthCheckPath: /
